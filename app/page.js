@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button"; // Ensure this path is correct
+import { Button } from "@/components/ui/button";
 
-export default function FloatingPaths({ position = 1 }) {
+// Export FloatingPaths as a named export
+export function FloatingPaths({ position = 1 }) {
   const paths = Array.from({ length: 36 }, (_, i) => ({
     id: i,
     d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${380 - i * 5 * position} -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${152 - i * 5 * position} ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${684 - i * 5 * position} ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
@@ -38,6 +40,7 @@ export default function FloatingPaths({ position = 1 }) {
   );
 }
 
+// Export Home as the default export
 export default function Home() {
   return (
     <div className="app-container">
@@ -141,5 +144,5 @@ export default function Home() {
         {/* Footer content */}
       </footer>
     </div>
-  )
+  );
 }
